@@ -1,10 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define SET(a) memset(a,-1,sizeof(a))
-#define CLR(a) memset(a,0,sizeof(a))
-#define PI acos(-1.0)
-
 #define MOD 1000000007
 #define MX 10010
 #define S(n) scanf("%d", &n);
@@ -12,13 +8,6 @@ using namespace std;
 vector<int> adj[MX];
 int vis[MX];
 
-/*
-bridge, bi-directional, O(V+E)
-t = time counter
-dis[i] = discovery time of vertex i
-low[i] = vertex with minimum discovery time that can be reached from subtree with i
-
-*/
 vector< pair<int, int> > bridge;
 pair<int, int> pii;
 int t, dis[MX], low[MX], parent[MX];
@@ -52,7 +41,6 @@ void findBridge(int u)
 int main()
 {
     int tc,kk=1,n,u,v,num;
-    //cin>>tc;
     while(scanf("%d", &n)==1)
     {
         for(int i=0;i<MX;i++)
@@ -61,8 +49,6 @@ int main()
             adj[i].clear();
         }
         t=0;
-
-        //S(n);
         for(int i=0;i<n;i++)
         {
             S(u);
